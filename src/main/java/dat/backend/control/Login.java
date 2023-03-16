@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "login", urlPatterns = {"/login"} )
+@WebServlet(name = "Login", value = "/login")
 public class Login extends HttpServlet
 {
     private ConnectionPool connectionPool;

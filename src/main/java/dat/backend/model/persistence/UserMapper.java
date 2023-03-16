@@ -42,7 +42,6 @@ class UserMapper
 
     static User createUser(String username, String password, String role, ConnectionPool connectionPool) throws DatabaseException
     {
-        Logger.getLogger("web").log(Level.INFO, "");
         User user;
         String sql = "insert into user (username, password, role) values (?,?,?)";
         try (Connection connection = connectionPool.getConnection())

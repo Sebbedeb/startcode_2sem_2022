@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <%@attribute name="header" fragment="true" %>
+<%@attribute name="footer" fragment="true" %>
 
 <!DOCTYPE html>
 <html lang="da">
@@ -28,8 +29,8 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 1</a>
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 2</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/about.jsp">About</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/itemList">ItemList</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 3</a>
                     <c:if test="${sessionScope.user == null }">
                         <a class="nav-item nav-link" href="${pageContext.request.contextPath}/login.jsp">Login</a>
@@ -44,8 +45,28 @@
 </header>
 
 <div id="body" class="container mt-4" style="min-height: 400px;">
-    <h1><jsp:invoke fragment="header"/></h1>
     <jsp:doBody/>
+</div>
+
+<!-- Footer -->
+<div class="container mt-3">
+    <hr/>
+    <div class="row mt-4">
+        <div class="col">
+            Nørgaardsvej 30<br/>
+            2800 Lyngby
+        </div>
+        <div class="col">
+            <jsp:invoke fragment="footer"/><br/>
+            <p>&copy; 2022 Cphbusiness</p>
+        </div>
+        <div class="col">
+            Datamatikeruddannelsen<br/>
+            2. semester efterår 2022
+        </div>
+    </div>
+
+</div>
 
 </div>
 
